@@ -1,2 +1,2 @@
 # ElarionStack
-Elarion FC&amp;ESC stack
+Wiring diagram for Elarion FC (https://elarion.io/product/elarion-fcesc-stack/)
