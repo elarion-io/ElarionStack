@@ -1,0 +1,26 @@
+From bbd48bebb6af894b00570cdd64a9a9ddd7a27119 Mon Sep 17 00:00:00 2001
+From: chemicstry <chemicstry@gmail.com>
+Date: Thu, 27 Feb 2025 12:23:17 +0200
+Subject: [PATCH] Use SPI Mode 0 for MAX7456
+
+---
+ src/main/drivers/max7456.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/main/drivers/max7456.c b/src/main/drivers/max7456.c
+index 95b004d57..862170b58 100644
+--- a/src/main/drivers/max7456.c
++++ b/src/main/drivers/max7456.c
+@@ -365,6 +365,9 @@ max7456InitStatus_e max7456Init(const max7456Config_t *max7456Config, const vcdP
+     IOConfigGPIO(dev->busType_u.spi.csnPin, SPI_IO_CS_CFG);
+     IOHi(dev->busType_u.spi.csnPin);
+ 
++    // Set the clock phase/polarity
++    spiSetClkPhasePolarity(dev, true);
++
+     // Detect MAX7456 existence and device type. Do this at half the speed for safety.
+ 
+     // Detect MAX7456 and compatible device by reading OSDM (OSD Insertion MUX) register.
+-- 
+2.25.1
+
