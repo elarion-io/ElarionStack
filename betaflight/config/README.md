@@ -6,4 +6,3 @@ Steps:
 - In `betaflight` directory apply OSD patch with `git apply ./0001-Use-SPI-Mode-0-for-MAX7456.patch`
 - Build firmware with `make ELARIONF405`
 - Built firmware can be found in `obj/` folder
-- 
